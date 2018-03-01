@@ -13,7 +13,8 @@
 	  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 	  crossorigin="anonymous"></script>
   
-  	</script>
+  <!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 
 	
@@ -26,13 +27,24 @@
 	<div class="row">
 		<div class="col-md-4"></div>
 		<div class="col-md-4">
-
+			<div class="jumbotron">
+				<form>
+				    <div class="form-group">
+				      <label for="usr">Name:</label>
+				      <input type="text" class="form-control" id="name">
+				    </div>
+				    <div class="form-group">
+				      <label for="pwd">image:</label>
+				      <input type="text" class="form-control" id="img">
+				    </div>
+				</form>
+			</div>
 			<div class="jumbotron">
 			 
 			   Your mind is always buzzing with unexplored ideas and plans.
 			   <br>
 				<select class="chosen-select" id="q1">
-			      <option value=""></option>
+			      <option></option>
 			      <option value="1">1 (Strongly Disagree)</option>
 			      <option value="2">2</option>
 			      <option value="3">3</option>
@@ -55,7 +67,7 @@
 
 			    <select class="chosen-select" id="q2">
 			    <br>
-			      <option value=""></option>
+			      <option></option>
 			      <option value="1">1 (Strongly Disagree)</option>
 			      <option value="2">2</option>
 			      <option value="3">3</option>
@@ -73,7 +85,7 @@
 			 You find it easy to stay relaxed and focused even when there is some pressure.
 			 <br>
 			 <select class="chosen-select" id="q3">
-			      <option value=""></option>
+			      <option></option>
 			      <option value="1">1 (Strongly Disagree)</option>
 			      <option value="2">2</option>
 			      <option value="3">3</option>
@@ -92,7 +104,7 @@
 			   You rarely do something just out of sheer curiosity.
 			   <br>
 			   <select class="chosen-select" id="q4">
-			      <option value=""></option>
+			      <option></option>
 			      <option value="1">1 (Strongly Disagree)</option>
 			      <option value="2">2</option>
 			      <option value="3">3</option>
@@ -111,7 +123,7 @@
 			    It is often difficult for you to relate to other people’s feelings.
 			    <br>
 			    <select class="chosen-select" id="q5">
-			      <option value=""></option>
+			      <option></option>
 			      <option value="1">1 (Strongly Disagree)</option>
 			      <option value="2">2</option>
 			      <option value="3">3</option>
@@ -130,7 +142,7 @@
 			    In a discussion, truth should be more important than people’s sensitivities.
 			    <br>
 			    <select class="chosen-select" id="q6">
-			      <option value=""></option>
+			      <option></option>
 			      <option value="1">1 (Strongly Disagree)</option>
 			      <option value="2">2</option>
 			      <option value="3">3</option>
@@ -149,7 +161,7 @@
 			    You rarely get carried away by fantasies and ideas.
 			    <br>
 			    <select class="chosen-select" id="q7">
-			      <option value=""></option>
+			      <option></option>
 			      <option value="1">1 (Strongly Disagree)</option>
 			      <option value="2">2</option>
 			      <option value="3">3</option>
@@ -169,7 +181,7 @@
 			    or not.
 			    <br>
 			    <select class="chosen-select" id="q8">
-			      <option value=""></option>
+			      <option></option>
 			      <option value="1">1 (Strongly Disagree)</option>
 			      <option value="2">2</option>
 			      <option value="3">3</option>
@@ -188,7 +200,7 @@
 			   You feel more energetic after spending time with a group of people.
 			   <br>
 			   <select class="chosen-select" id="q9">
-			      <option value=""></option>
+			      <option></option>
 			      <option value="1">1 (Strongly Disagree)</option>
 			      <option value="2">2</option>
 			      <option value="3">3</option>
@@ -206,7 +218,7 @@
 			   People can rarely upset you.
 			   <br>
 			   <select class="chosen-select" id="q10">
-			      <option value=""></option>
+			      <option></option>
 			      <option value="1">1 (Strongly Disagree)</option>
 			      <option value="2">2</option>
 			      <option value="3">3</option>
@@ -225,37 +237,131 @@
 		</div>
 
 	</div>
-	
 
-</body>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+      	<!-- match will be added -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
 
 <script type="text/javascript">
-		$("#surveySubmit").on("click", function (argument) {
-			
-			var userData = {
-				q1:  parseInt($("#q1").val()),
-				
-				q2:  parseInt($("#q2").val()),
-				
-				q3:  parseInt($("#q3").val()),
-				
-				q4:  parseInt($("#q4").val()),
-				
-				q5:  parseInt($("#q5").val()),
-				
-				q6:  parseInt($("#q6").val()),
-				
-				q7:  parseInt($("#q7").val()),
-				
-				q8:  parseInt($("#q8").val()),
-				
-				q9:  parseInt($("#q9").val()),
-				
-				q10:  parseInt($("#q10").val())
-			}
-			$.post("/api/friends", userData, function(data) {
+	var userData = {
+		name: null,
+		image: null,
+		score:[]
 
-			})
+	}
+
+	
+	
+		$("#surveySubmit").on("click", function (argument) {
+			userData.name = $("#name").val()
+
+			userData.image = $("#img").val()
+
+
+			userData.score  = [
+				parseInt($("#q1").val()),
+				
+				parseInt($("#q2").val()),
+				
+				parseInt($("#q3").val()),
+				
+				parseInt($("#q4").val()),
+				
+				parseInt($("#q5").val()),
+				
+				parseInt($("#q6").val()),
+				
+				parseInt($("#q7").val()),
+				
+				parseInt($("#q8").val()),
+				
+				parseInt($("#q9").val()),
+				
+				parseInt($("#q10").val())
+			]
+			console.log(userData);
+			// $.post("/api/friends", userData, function(data) {
+
+			// })
+	
+			if(ValidURL(userData.image) && userData.score.length === 10 && !userData.score.includes(NaN) && !userData.score.includes(null)){
+				console.log("we can do our post now")
+				// clear / rest the form
+				postUserInput(userData);
+			}else{
+				if(!ValidURL(userData.image)){
+					console.log("Please enter valid URL.");
+				}else if(userData.score.includes(NaN) || userData.score.includes(null)){
+					console.log("Please answer all the questions.");
+				}
+			}
 		})
+
+		function postUserInput(newUser){
+			$.post("/api/friends", newUser, function(match){
+				// reset the values of newFriend
+				userData = {
+					name: null,
+					image: null,
+					score: []
+				}
+				renderHTML(match);
+			});
+		}
+
+		function ValidURL(str) {
+		  var regex = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
+		  if(!regex .test(str)) {
+		    //
+		    return false;
+		  } else {
+		    return true;
+		  }
+		}
+
+		function renderHTML(match){
+			// empty modal body
+			$("#myModal").empty()
+			console.log(match.name);
+			console.log(match.image);
+
+			// create modal content
+			// add match data to modal
+			// append to modal body
+			// show modal
+
+			var modalName = $("<p>")
+			var modalImage = $("<img>")
+			modalName.text(match.name);
+			modalImage.text(match.image);
+
+			$("#modal-body").append(modalName);
+			$("#modal-body").append(modalImage);
+
+
+			$("#myModal").modal("show")	
+
+		}
 	</script>
+</body>
 </html>

@@ -9,17 +9,31 @@ module.exports = function(app) {
 
 
   app.post("/api/friends", function(req, res) {
-    console.log(req.body)
 
-    // Empty out the arrays of data
-    // get your data from the request object
-    // loop through your friends array
-      // getting the difference between each score
-      // store lowest score
-    // respond with the friend object that is the match
-    // display some view where the match is displayed
+    var userScore = req.body["score[]"];
+    var scoresArray = [];
+    var friendCount = 0;
+    var bestMatch = 0;
 
+    for(var i=0; i<friends.length; i++){
+      var difference = 0;
+      var current = friends[i]
+      
+      //run through scores to compare friends
+      for(var j=0; j<userScore.length; j++){
+        difference += (Math.abs(parseInt(current["score"][j]) - parseInt(userScore[j])));
+      }
+      //push results into scoresArray
+      scoresArray.push(difference);
+    }
 
+    var leastIndex = scoresArray.indexOf(Math.min(...scoresArray))
+
+    console.log(friends[leastIndex])
+
+  // example of sending back data thta was received
+  res.json(req.body)
 
   });
 };
+
