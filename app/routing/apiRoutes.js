@@ -11,28 +11,31 @@ module.exports = function(app) {
   app.post("/api/friends", function(req, res) {
 
     var userScore = req.body["score[]"];
-    var scoresArray = [];
-    var friendCount = 0;
-    var bestMatch = 0;
+    var scores = [];
+    
 
     for(var i=0; i<friends.length; i++){
       var difference = 0;
-      var current = friends[i]
+      //var current = friends[i]
       
       //run through scores to compare friends
       for(var j=0; j<userScore.length; j++){
-        difference += (Math.abs(parseInt(current["score"][j]) - parseInt(userScore[j])));
+        difference += (Math.abs(parseInt(friends[i]["score"][j]) - parseInt(userScore[j])));
       }
-      //push results into scoresArray
-      scoresArray.push(difference);
+      //push results into scores
+      scores.push(difference);
     }
 
-    var leastIndex = scoresArray.indexOf(Math.min(...scoresArray))
+    var leastIndex = scores.indexOf(Math.min(...scores))
 
     console.log(friends[leastIndex])
 
+    var match  = friends[leastIndex]
+
+    res.json(match)
+
   // example of sending back data thta was received
-  res.json(req.body)
+  //res.json(req.body)
 
   });
 };
