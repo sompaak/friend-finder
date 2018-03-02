@@ -3,26 +3,27 @@
 <head>
 	<title></title>
 
-
-
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-	<link rel="stylesheet" href="assets/css/style.css">
 	<script
-	  src="https://code.jquery.com/jquery-3.3.1.min.js"
-	  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-	  crossorigin="anonymous"></script>
+		src="https://code.jquery.com/jquery-3.3.1.min.js"
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		crossorigin="anonymous">  	
+	</script>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+
   
-  <!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-
-	
+    <!-- Latest compiled and minified JavaScript -->
+	<script 
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
+		crossorigin="anonymous">
+	</script>
 
 </head>
+
 <body>
-
-
 
 	<div class="row">
 		<div class="col-md-4"></div>
@@ -240,27 +241,28 @@
 
 
 <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
       <div class="modal-body">
-      	<!-- match will be added -->
+        <p id="match"></p>
+		<img id="photo">
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
-
   </div>
 </div>
 
-
+<!-- Add Comment -->
 
 <script type="text/javascript">
 	var userData = {
@@ -320,13 +322,15 @@
 		function postUserInput(newUser){
 			$.post("/api/friends", newUser, function(match){
 				// reset the values of newFriend
+			console.log("================1",match);
+
 				userData = {
 					name: null,
 					image: null,
 					score: []
 				}
 				renderHTML(match);
-			});
+			}); 
 		}
 
 		function ValidURL(str) {
@@ -341,27 +345,19 @@
 
 		function renderHTML(match){
 			// empty modal body
-			$("#myModal").empty()
-			console.log(match.name);
-			console.log(match.image);
-
-			// create modal content
-			// add match data to modal
-			// append to modal body
-			// show modal
-
-			var modalName = $("<p>")
-			var modalImage = $("<img>")
-			modalName.text(match.name);
-			modalImage.text(match.image);
-
-			$("#modal-body").append(modalName);
-			$("#modal-body").append(modalImage);
+			console.log("================",match);
+			// $(".modal").empty()
+			console.log(match.photo);
 
 
-			$("#myModal").modal("show")	
+  			$('#match').html(match.name);
+	    	$("#photo").attr("src", match.photo);
+	    	// Pop open the modal dialog
+  			$('#myModal').modal("show");			
+
 
 		}
+		
 	</script>
 </body>
 </html>

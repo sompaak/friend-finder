@@ -28,7 +28,7 @@ module.exports = function(app) {
 
     var leastIndex = scores.indexOf(Math.min(...scores))
 
-    console.log(friends[leastIndex])
+    console.log("========here",friends[leastIndex])
 
     var match  = friends[leastIndex]
 

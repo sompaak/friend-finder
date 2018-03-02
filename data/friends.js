@@ -16,7 +16,7 @@
 		  },
 		  {
 		    name: "bob",
-		    photo: "ahmed@example.com",
+		    photo: "https://www.patiliyo.com/wp-content/uploads/2017/07/ruyada-kedi-gormek.jpg",
 		    "score": [3,2,5,2,3,1,2,1,2,1]
 		    
 		  },
