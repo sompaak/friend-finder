@@ -11,9 +11,10 @@ Instructions:
 
 3) After sunbit button is pressed a match will appear which is done with an algorithm in the server-side code.
 
-<br>
+______________________________________________________________________________________________________________________________
 
 here is the link to the live site: https://dry-temple-52828.herokuapp.com/
+______________________________________________________________________________________________________________________________
 
 Technologies Used:
 
@@ -23,6 +24,8 @@ Technologies Used:
 4) HTTP PROTOCOL
 5) HTML/BOOTSRAP
 6) CSS
+______________________________________________________________________________________________________________________________
+SCREENSHOTS:
 
 <img src="shot1.png">
 <img src="shot2.png">
