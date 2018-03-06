@@ -9,7 +9,7 @@ Instructions:
 
 2) The user has to fill out all fields and and has to enter an image url for the image field.
 
-3) After sunbit button is pressed a match will appear which is done with an algorithm in the server-side code.
+3) After submit button is pressed a match will appear which is done with an algorithm in the server-side code.
 
 ______________________________________________________________________________________________________________________________
 
